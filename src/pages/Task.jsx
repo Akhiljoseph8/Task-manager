@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { addTask, getTask,updateTask,deleteTask } from "../services/allApis";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
@@ -19,7 +19,7 @@ function Task() {
     status: "",
   });
 
-
+const navigate = useNavigate("");
 
   useEffect(() => {
     getTasks();
@@ -110,7 +110,7 @@ function Task() {
     const res = await deleteTask(id,header);
     if (res.status == 200) {
       toast.success("Task deleted");
-      window.location.reload();
+      navigate("/task")
     }
   };
 
