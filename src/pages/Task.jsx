@@ -110,7 +110,7 @@ const navigate = useNavigate("");
     const res = await deleteTask(id,header);
     if (res.status == 200) {
       toast.success("Task deleted");
-      navigate("/task")
+      window.location.reload();
     }
   };
 
