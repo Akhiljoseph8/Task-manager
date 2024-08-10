@@ -94,6 +94,7 @@ const navigate = useNavigate("");
       console.log(result);
       if (result.status == 200) {
         toast.success("Task updated");
+        setEditableId(null)
         setEditedTask("");
         setEditedStatus("");
       } else {
