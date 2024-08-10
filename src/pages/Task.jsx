@@ -30,7 +30,7 @@ const navigate = useNavigate("");
     } else {
       setLogStatus(false);
     }
-  }, [logStatus]);
+  }, [logStatus,taskList]);
 
   
 
@@ -63,7 +63,6 @@ const navigate = useNavigate("");
       if (result.status == 200) {
         toast.success("Task added");
         setData({ task: "", createdTime: "", updateTime: "", status: "" });
-        window.location.reload();
       } else {
         toast.error(result.response.data);
       }
@@ -97,7 +96,6 @@ const navigate = useNavigate("");
         toast.success("Task updated");
         setEditedTask("");
         setEditedStatus("");
-        window.location.reload();
       } else {
         toast.error(result.response.data);
       }
@@ -110,7 +108,6 @@ const navigate = useNavigate("");
     const res = await deleteTask(id,header);
     if (res.status == 200) {
       toast.success("Task deleted");
-      window.location.reload();
     }
   };
 
