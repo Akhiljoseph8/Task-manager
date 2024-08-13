@@ -51,7 +51,9 @@ const navigate = useNavigate("");
 
   // Function to add task to the database
   const Taskadd = async (e) => {
-    // e.preventDefault();
+    var form =document.getElementsByName('form')[0];
+    form.reset()
+    e.preventDefault();
     const { task, status, createdTime, updateTime, userId } = data;
     if (!status || !task) {
       alert("All fields must be filled out.");
@@ -214,7 +216,7 @@ const navigate = useNavigate("");
         </div>
         <div className="col-md-4">
           <h3 className="text-center">Add Task</h3>
-          <form className="bg-light p-4">
+          <form className="bg-light p-4" name="form">
             <div className="mb-3">
               <label>Task</label>
               <input
