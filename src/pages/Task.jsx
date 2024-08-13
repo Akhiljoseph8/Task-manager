@@ -51,7 +51,7 @@ const navigate = useNavigate("");
 
   // Function to add task to the database
   const Taskadd = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const { task, status, createdTime, updateTime, userId } = data;
     if (!status || !task) {
       alert("All fields must be filled out.");
